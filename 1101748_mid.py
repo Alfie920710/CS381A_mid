@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Apr 11 12:36:23 2025
+
+
+"""
+import pandas as pd
+
+# 標題：各學年度大專校院境外學生在臺留學研習人數統計
+url = 'https://ws.moe.edu.tw/Download.ashx?u=C099358C81D4876CC7586B178A6BD6D5E522FE56CEFF96221B2F44123832768190C9C63A860B71FF09FD26107601061EE5D85C5FAC36EC6BAE907D0EEF571E93500AF63FACAE8CA9EC064AC8A9767CF0&n=04C453B60DC0C662D56122677FA80EF0FA1E34777EF6C58D61CF60A7847ED46E41F8AD97368A1248589CA91ED312D64631C2CF5BE7F4D8F207E2946FB48CD8B8872DB61614A8DD92&icon=..csv'
+
+# 使用pd來儲存爬取到的資料
+data = pd.read_csv(url, encoding='utf-8')
+
+# 使用含BOM的UTF8解決亂碼問題
+filename = 'api.csv'
+data.to_csv(filename, index = False, encoding = 'utf-8-sig')
