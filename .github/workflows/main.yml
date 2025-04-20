@@ -1,0 +1,27 @@
+name: Daily Run Script
+
+on:
+  schedule:
+    - cron: '1 0 * * *'  # 每日 08:01 UTC+8 執行
+
+jobs:
+  run-example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # 備用
+          # pip install -r requirements.txt
+
+      - name: Run 1101748_mid.py
+        run: python 1101748_mid.py
