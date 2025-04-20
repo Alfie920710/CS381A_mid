@@ -29,7 +29,7 @@ jobs:
         run: python 1101748_mid.py
 
       - name: Commit generated CSV
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: generated-csv
           path: ./api.csv
