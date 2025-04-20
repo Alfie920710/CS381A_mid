@@ -29,8 +29,8 @@ jobs:
           # 備用
           # pip install -r requirements.txt
 
-      - name: Run 1101748_mid.py        # 執行階段
-        run: python 1101748_mid.py
+      - name: Run api.py                # 執行階段
+        run: python api.py
 
       - name: Commit generated CSV      # 上傳csv
         uses: actions/upload-artifact@v4
