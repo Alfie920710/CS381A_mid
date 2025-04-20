@@ -3,6 +3,7 @@ name: Daily Run Script
 on:
   schedule:
     - cron: '1 0 * * *'  # 每日 08:01 UTC+8 執行
+    workflow_dispatch:
 
 jobs:
   run-example:
